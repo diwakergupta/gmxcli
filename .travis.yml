@@ -1,0 +1,21 @@
+language: go
+
+go:
+  - "1.10.x"
+
+before_script:
+  - go vet github.com/diwakergupta/gmxcli
+
+install: true
+
+script:
+  - go build
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  skip_cleanup: true
+  file_glob: true
+  file: "dist/*"
+  on:
+    tags: true
