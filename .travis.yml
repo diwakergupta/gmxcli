@@ -19,3 +19,7 @@ deploy:
   file: "dist/*"
   on:
     tags: true
+
+notifications:
+  email:
+    on_success: never
