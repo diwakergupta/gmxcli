@@ -9,7 +9,7 @@ before_script:
 install: true
 
 script:
-  - go build
+  - ./build.sh
 
 deploy:
   provider: releases
