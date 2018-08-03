@@ -162,7 +162,7 @@ func newOAuthClient(user string) *http.Client {
 		tokenMap[user] = token
 		writeTokens(filePath, tokenMap)
 	} else {
-		log.Printf("Using cached token %#v from %q", token, filePath)
+		log.Printf("Using cached token from %q", filePath)
 	}
 	return config.Client(ctx, token)
 }

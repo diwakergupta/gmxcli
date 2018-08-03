@@ -1,9 +1,10 @@
 package cmd
 
 import (
-	"fmt"
 	"log"
+	"os"
 
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
 
@@ -14,9 +15,13 @@ func listLabels(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		log.Fatalf("Unable to retrieve labels: %v", err)
 	}
+
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader([]string{"Id", "Name"})
 	for _, l := range r.Labels {
-		fmt.Printf("%v\n", l)
+		table.Append([]string{l.Id, l.Name})
 	}
+	table.Render()
 	return nil
 }
 
