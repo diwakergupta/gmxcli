@@ -66,7 +66,7 @@
     "context/ctxhttp",
   ]
   pruneopts = "UT"
-  revision = "a0f8a16cb08c06df97cbdf9c47f4731ba548c33c"
+  revision = "f4c29de78a2a91c00474a2e689954305c350adf9"
 
 [[projects]]
   branch = "master"
@@ -93,7 +93,7 @@
     "googleapi/internal/uritemplates",
   ]
   pruneopts = "UT"
-  revision = "31ca0e01cd791f07750cb23fc99327721f753290"
+  revision = "6c5c3d4ff96110173c63a6ffea8f2ffc8bb541b4"
 
 [[projects]]
   digest = "1:c8907869850adaa8bd7631887948d0684f3787d0912f1c01ab72581a6c34432e"
