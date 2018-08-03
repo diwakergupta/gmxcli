@@ -58,7 +58,9 @@ func Execute() {
 
 func init() {
 	RootCmd.PersistentFlags().BoolP("verbose", "v", false, "Enable verbose logging")
-	RootCmd.PersistentFlags().String("user", "me", "User to authenticate as")
+	RootCmd.PersistentFlags().StringP("user", "u", "me", "User to authenticate as")
+	RootCmd.PersistentFlags().StringP("config", "c", "", "YAML configuration file (required)")
+	RootCmd.MarkFlagRequired("config")
 }
 
 func initGmx(cmd *cobra.Command, args []string) error {

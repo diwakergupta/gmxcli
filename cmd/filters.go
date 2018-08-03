@@ -49,7 +49,8 @@ func uploadFilters(cmd *cobra.Command, args []string) error {
 	}
 
 	// Read config file
-	yamlFile, err := ioutil.ReadFile("filters.yaml")
+	config, _ := cmd.Flags().GetString("config")
+	yamlFile, err := ioutil.ReadFile(config)
 	if err != nil {
 		log.Printf("%e\n", err)
 		return err
