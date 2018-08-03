@@ -11,15 +11,16 @@ import (
 )
 
 func deleteAllFilters(cmd *cobra.Command, args []string) error {
-	r, err := svc.Users.Settings.Filters.List("me").Do()
+	user, _ := cmd.Flags().GetString("user")
+	r, err := svc.Users.Settings.Filters.List(user).Do()
 	if err != nil {
 		log.Printf("Unable to retrieve filters: %v", err)
 		return err
 	}
 
 	for _, f := range r.Filter {
-		fmt.Printf("Deleting filter ID %s Criteria %v\n", f.Id, f.Criteria)
-		svc.Users.Settings.Filters.Delete("me", f.Id).Do()
+		log.Printf("Deleting filter ID %s Criteria %v\n", f.Id, f.Criteria)
+		svc.Users.Settings.Filters.Delete(user, f.Id).Do()
 	}
 	return nil
 }
