@@ -3,9 +3,6 @@ language: go
 go:
   - "1.11.x"
 
-# Skip the default install step. Modules should work their magic.
-install: true
-
 script:
   - ./build.sh
 
