@@ -3,9 +3,7 @@ language: go
 go:
   - "1.11.x"
 
-before_script:
-  - go vet github.com/diwakergupta/gmxcli
-
+# Skip the default install step. Modules should work their magic.
 install: true
 
 script:
